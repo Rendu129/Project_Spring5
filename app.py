@@ -5,8 +5,6 @@ car_data = pd.read_csv('vehicles_us.csv')
 
 st.header('Venta de Autos')
 
-st.table(car_data)
-
 hist_button = st.button('Construir histograma')
 if hist_button:
     st.write(
