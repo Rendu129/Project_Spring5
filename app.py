@@ -23,19 +23,32 @@ if disp_button:
     fig = px.scatter(car_data, x='model_year', y='price')
     st.plotly_chart(fig, use_container_widh=True)
 
+st.header('Tipo de Transmision')
+
 automatic = car_data.query("transmission=='automatic'")[
     ['price', 'model_year']]
 manual = car_data.query("transmission=='manual'")[['price', 'model_year']]
-other = car_data.query("transmission=='other'")[['price', 'model_year']]
+hibrido = car_data.query("transmission=='other'")[['price', 'model_year']]
 
-list = ['automatic', 'manual', 'other']
+list = ['automatic', 'manual', 'hibrido']
 option = st.selectbox(
     'Seleciona tipo de transmision', list, index=None)
 st.write('Haz seleccionado:', option)
 
 if option == 'automatic':
     st.write('Selecciona tipo de grafico para la transmision automatica:')
+    check = st.checkbox('Histograma')
+    check2 = st.checkbox('Grafico de lineas')
+    if check:
+        st.write('Relacion modelo vd precio autos automaticos')
+        fig = px.histogram(automatic, x='model_year', y='price')
+        st.plotly_chart(fig, use_container_width=True)
+    if check2:
+        st.write('Relacion modelo vd precio autos automaticos')
+        fig = px.line_chart(automatic, x='model_year', y='price')
+        st.plotly_chart(fig, use_container_width=True)
+
 elif option == 'manual':
     st.write('Selecciona tipo de grafico para la trasmision manual:')
-elif option == 'other':
+elif option == 'hibrido':
     st.write('Selecciona tipo de grafico para trasmision electrica')
