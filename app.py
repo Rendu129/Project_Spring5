@@ -7,3 +7,4 @@ car_data = pd.read_csv(
 st.header('Venta de Autos')
 st.write('Esta app esta en construccion')
 fig = px.histogram(car_data, x='odometer')
+print(car_data.head())
