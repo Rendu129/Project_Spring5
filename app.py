@@ -23,5 +23,6 @@ if disp_button:
     fig = px.scatter(car_data, x='model_year', y='price')
     st.plotly_chart(fig, use_container_widh=True)
 
+group_condition = car_data.groupby('condition')
 option = st.selectbox(
-    'Seleciona la condicion que deseas tu auto', car_data['condition'])
+    'Seleciona la condicion que deseas tu auto', car_data['transmission'])
