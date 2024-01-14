@@ -38,14 +38,14 @@ st.write('Haz seleccionado:', option)
 if option == 'automatic':
     st.write('Selecciona tipo de grafico para la transmision automatica:')
     check = st.checkbox('Histograma')
-    check2 = st.checkbox('Grafico de lineas')
+    check2 = st.checkbox('Grafico de lineas', value=True)
     if check:
         st.write('Relacion modelo vd precio autos automaticos')
         fig = px.histogram(automatic, x='model_year', y='price')
         st.plotly_chart(fig, use_container_width=True)
     if check2:
         st.write('Relacion modelo vd precio autos automaticos')
-        fig = px.line_chart(automatic, x='model_year', y='price')
+        fig = px.scatter(automatic, x='model_year', y='price')
         st.plotly_chart(fig, use_container_width=True)
 
 elif option == 'manual':
