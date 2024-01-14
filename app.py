@@ -7,16 +7,16 @@ st.title('VENTA DE AUTOS SEMI-NUEVOS')
 
 st.header('Kilometraje')
 
-hist_button = st.button('Construir histograma')
+hist_button = st.button('Histograma')
 if hist_button:
     st.write(
-        'Construir un histograma para conocer el kilometraje de nuestros autos')
+        'Conoce el kilometraje de nuestros autos')
     fig = px.histogram(car_data, x='odometer')
     st.plotly_chart(fig, use_container_width=True)
 
 st.header('Modelo del Auto')
 
-disp_button = st.button('Construir un grafico de Dispersion')
+disp_button = st.button('Dispersion')
 if disp_button:
     st.write(
         'Muestra la relacion entre el modelo del auto y su precio')
