@@ -62,19 +62,19 @@ elif option == 'manual':
     if check2:
         st.write('Relacion modelo vd precio autos manual')
         fig = px.scatter(manual, x='model_year', y='price',
-                         title='Transmision Automatica')
+                         title='Transmision Manual')
         st.plotly_chart(fig, use_container_width=True)
 elif option == 'hibrido':
-    st.write('Selecciona tipo de grafico para trasmision electrica')
+    st.write('Selecciona tipo de grafico para trasmision Hibrida')
     check = st.checkbox('Histograma')
     check2 = st.checkbox('Grafico de lineas')
     if check:
         st.write('Relacion modelo vd precio autos hibridos')
         fig = px.histogram(hibrido, x='model_year',
-                           y='price', title='Transmision Manual')
+                           y='price', title='Transmision Hibrida')
         st.plotly_chart(fig, use_container_width=True)
     if check2:
         st.write('Relacion modelo vd precio autos hibridos')
         fig = px.scatter(hibrido, x='model_year', y='price',
-                         title='Transmision Automatica')
+                         title='Transmision Hibrida')
         st.plotly_chart(fig, use_container_width=True)
